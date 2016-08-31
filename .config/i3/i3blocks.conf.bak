@@ -1,0 +1,14 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+color=#E0E0E0
+
+[song]
+command=xprop -name "Spotify Premium - Linux Preview" _NET_WM_ICON_NAME|\cut -d "\"" -f 2|cut -b 11-
+label=
+interval=1
+color=#2ebd59
+
+
+[date]
+command=date '+%b %d %H:%M'
+interval=1
+label=

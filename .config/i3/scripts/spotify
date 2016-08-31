@@ -1,0 +1,2 @@
+#!/bin/sh
+python /home/janek/.config/i3/scripts/spotify.py
