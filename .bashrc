@@ -116,6 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+function cd_
+{
+  [[ -d "$@" ]] || return 1
+  echo "$@" > ~/.last_dir
+  cd "$@"
+}
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -127,6 +135,7 @@ alias cd3.='cd ../../..'
 alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
 
+alias th="gnome-terminal &"
 
 #virtualenvwrapper stuff 
 alias mkve='mkvirtualenv -p python3'
