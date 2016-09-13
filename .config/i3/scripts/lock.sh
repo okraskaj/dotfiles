@@ -4,13 +4,15 @@ scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
 #convert /tmp/screen.png -blur "0x8" /tmp/screen.png
  
-if [[ -f $HOME/.config/i3/scripts/images/padlock.png ]]
+if [[ -f $HOME/.config/i3/scripts/images/lock-1.png ]]
 then
     # placement x/y
     PX=0
     PY=0
     # lockscreen image info
-    R=$(file $HOME/.config/i3/scripts/images/padlock.png | grep -o '[0-9]* x [0-9]*')
+    files=(/home/janek/.config/i3/scripts/images/*)
+    IMAGENAME=(%s\n" "${files[RANDOM % ${#files[@]}]})
+    R=$(file $IMAGENAME | grep -o '[0-9]* x [0-9]*')
     RX=$(echo $R | cut -d' ' -f 1)
     RY=$(echo $R | cut -d' ' -f 3)
  
@@ -25,7 +27,7 @@ then
         PX=$(($SROX + $SRX/2 - $RX/2))
         PY=$(($SROY + $SRY/2 - $RY/2))
  
-        convert /tmp/screen.png $HOME/.config/i3/scripts/images/padlock.png -geometry +$PX+$PY -composite -matte  /tmp/screen.png
+        convert /tmp/screen.png $IMAGENAME -geometry +$PX+$PY -composite -matte  /tmp/screen.png
         echo "done"
     done
 fi
