@@ -143,6 +143,7 @@ alias rmve='rmvirtualenv'
 alias cpve='cpvirtualenv'
 alias lsve='lsvirtualenv'
 alias cdve='cdvirtualenv'
+alias mkda='deactivate'
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
