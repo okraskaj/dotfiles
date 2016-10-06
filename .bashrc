@@ -136,6 +136,7 @@ alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
 
 alias th="gnome-terminal &"
+alias i3conf="cd /home/janek/.config/i3"
 
 #virtualenvwrapper stuff 
 alias mkve='mkvirtualenv -p python3'
