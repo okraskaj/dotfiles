@@ -156,5 +156,10 @@ eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias FUCK)"
 
+#loading bluetooth module
+pactl load-module module-bluetooth-discover
+
 # added by Anaconda2 4.1.0 installer
 export PATH="/home/janek/anaconda2/bin:$PATH"
+
+export PATH=/home/janek/anaconda2/bin:/home/janek/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/janek/.vimpkg/bin

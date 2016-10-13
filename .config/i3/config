@@ -5,7 +5,7 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# i3 config file (v4)
+# i3 config file: (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -128,12 +128,12 @@ set $workspace10 "10: "
 
 
 # switch to workspace/
-bindsym $mod+1 workspace $workspace1; move workspace to output $left; exec ~/.config/i3/scripts/runorraise.sh chromium chromium-browser
+bindsym $mod+1 workspace $workspace1; move workspace to output $left; exec ~/.config/i3/scripts/runorraise.sh google-chrome google-chrome
 bindsym $mod+2 workspace $workspace2; move workspace to output $right; exec ~/.config/i3/scripts/runorraise.sh terminal terminal 
 bindsym $mod+3 workspace $workspace3; move workspace to output $left; exec ~/.config/i3/scripts/runorraise.sh thunderbird thunderbird 
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6; move workspace to output $left; exec ~/.config/i3/scripts/runorraise.sh chromium chromium browser
+bindsym $mod+6 workspace $workspace6; move workspace to output $left; exec ~/.config/i3/scripts/runorraise.sh google-chrome google-chrome
 #TODO: add two parameters to the script to open when less than x instances are run (2) and to open a specyfic website
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
@@ -153,7 +153,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 #assigning application to their workspaces
-assign [class="chromium-browser"] $workspace1
+assign [class="google-chrome"] $workspace1
 assign [class="Gnome-terminal"] $workspace2
 assign [class="Thunderbird"] $workspace3
 assign [class="Thunar"] $workspace7
@@ -163,7 +163,7 @@ assign [class="Pidgin"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10 #this is the only way to make it work due to spotify-beta bug
 
 #autostart applications on i3 start
-exec chromium-browser
+exec google-chrome
 exec i3-sensible-terminal
 exec spotify
 exec thunderbird
@@ -246,10 +246,10 @@ bindsym $mod+shift+x exec ~/.config/i3/scripts/lock1.sh
 
 # Pulse Audio controls
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%;exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%;exec --no-startup-id pactl set-sink-volume 3 +5% #increase sound volume
 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%;exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle; exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%;exec --no-startup-id pactl set-sink-volume 3 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle; exec --no-startup-id pactl set-sink-mute 3 toggle # mute sound
 #
 #bindsym XF86AudioRaiseVolume exec amixer -q set Headset 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Headset 2dB- unmute
